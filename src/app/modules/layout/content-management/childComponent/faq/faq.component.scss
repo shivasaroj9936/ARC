@@ -1,0 +1,115 @@
+@use '../who-we-are/who-we-are.component.scss';
+
+$color: #7198f3;
+section {
+  .inputFilters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -3%;
+    .field1 {
+      width: 500px;
+      height: 20px;
+      position: relative;
+
+      .searchIcon {
+        position: absolute;
+        right: 0;
+        font-size: 25px;
+        margin-top: -2%;
+      }
+    }
+    .status {
+      display: flex;
+      flex-direction: column;
+      color: $color;
+    }
+    ::ng-deep {
+      .mat-form-field-flex {
+        height: 40px;
+      }
+      .mat-form-field-infix {
+        top: -5px;
+      }
+      .mat-form-field-label {
+        color: $color;
+        margin-left: 10%;
+      }
+      .material-icons {
+        color: $color;
+      }
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: $color;
+      }
+      .mat-select-placeholder {
+        color: $color;
+      }
+      .mat-select-arrow {
+        color: $color;
+      }
+    }
+  }
+  .subHeader {
+    .righttitle {
+      border-bottom: 4px solid white;
+    }
+  }
+  .content {
+    .statusBox {
+      margin: 30px;
+      padding: 15px;
+      border: 1px solid gainsboro;
+      .border {
+        width: 80%;
+        margin: 0px -35px 0px -15px;
+        border: 1px solid $color;
+      }
+      .contentStatus {
+        display: flex;
+        justify-content: space-between;
+        .dateTime {
+          display: flex;
+          gap: 15px;
+          margin: 5px 15px;
+          .addedStatus {
+            color: gainsboro;
+            font-size: 18px;
+            font-weight: 500;
+          }
+          .tymingStatus {
+            color: $color;
+          }
+        }
+        .icon {
+          display: flex;
+          gap: 15px;
+          .mat-icon {
+            font-size: 30px;
+            vertical-align: middle;
+            color: $color;
+          }
+          .statusText {
+            color: greenyellow;
+            padding: 3px 20px;
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 2px solid greenyellow;
+          }
+        }
+      }
+      .faq{
+        color: $color;
+        margin-top: 10px;
+        .question{
+          font-weight: 500;
+          font-size: 18px;
+
+        }
+          .answer{
+            font-family: 'Cormorant','Montserrat',monospace;
+
+          }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$color: #7198f3;
+$border:3px;
+section {
+  margin: 30px;
+
+  ::ng-deep {
+    .mat-tab-labels {
+      gap: 150px;
+      padding: 10px 5px;
+      margin-left: 80px;
+
+    }
+
+    :host .mat-ink-bar {
+      left: 224px;
+    }
+
+    .mat-tab-label {
+      background-color: transparent;
+      color: $color;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .mat-tab-label.mat-tab-label-active {
+      background-color: transparent;
+      color: $color;
+      font-weight: 500;
+    }
+
+    .mat-tab-header {
+      border-top: $border;
+      margin-top: 2px;
+      border-bottom: 1px solid $color;
+    }
+  }
+
+}

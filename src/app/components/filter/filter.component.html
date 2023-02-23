@@ -1,0 +1,38 @@
+<section>
+  <div class="filterSection">
+    <form [formGroup]="filterForm" >
+    <div class="filterSectionRow1">
+      <div>
+        <mat-form-field appearance="outline" class="field1">
+          <mat-label>Search through transaction id</mat-label>
+          <input matInput placeholder="transaction id"  formControlName="searchTitle" />
+          <!-- <mat-error *ngIf="(filterForm?.invalid)">*Enter the search details</mat-error> -->
+        </mat-form-field>
+      </div>
+      <ng-content  select=".staff-management"></ng-content>
+      <div>
+        <mat-form-field  class="example-full-width2"  appearance="outline"  required  >
+          <mat-label>Show 10</mat-label>
+          <mat-select matInput formControlName="pageSize">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option value="5">5</mat-option>
+            <mat-option value="10">10</mat-option>
+            <mat-option value="15">15</mat-option>
+
+          </mat-select>
+          <!-- <mat-error *ngIf="(filterDetailsForm?.invalid)">*Enter the search details</mat-error> -->
+
+        </mat-form-field>
+      </div>
+    </div>
+      <ng-content select=".client-management"></ng-content>
+      <ng-content select=".notification-management"></ng-content>
+      <ng-content select=".transaction-management"></ng-content>
+      <ng-content select=".earning-management"></ng-content>
+    <div class="btnGroup">
+      <button type="submit" mat-raised-button id="save" (click)="onSubmit()" >Apply</button>
+      <button type="reset" mat-raised-button id="reset" (click)="onReset()" >Reset</button>
+    </div>
+  </form>
+  </div>
+</section>

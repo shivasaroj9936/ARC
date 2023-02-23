@@ -1,0 +1,128 @@
+$color: #7198f3;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+
+section {
+  .toggle {
+    mat-toolbar {
+      box-shadow: none;
+      z-index: 100;
+      position: absolute;
+      width: 100px;
+      background-color: transparent;
+      left: 0;
+    }
+  }
+
+  .header {
+    position: fixed;
+    width: 82.2%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 36px;
+    padding-bottom: -3px;
+    font-size: 30px;
+    color: $color;
+    border-bottom: $border;
+    z-index: 1000;
+    background-color: white;
+    @media only screen and (max-width: 1500px) {
+      width: 78%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      width: 70%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      width: 70%;
+    }
+
+    @media only screen and (max-width: 900px) {
+      width: 65%;
+    }
+
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+
+    .heading {
+      padding-left: 30px;
+
+      h1 {
+        font-weight: 500;
+        margin-bottom: -4px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .profileIcon {
+      display: flex;
+      padding-right: 30px;
+
+      .material-icons {
+        font-size: 40px;
+      }
+
+      .user {
+        display: flex;
+
+        #name {
+          margin-top: 10px;
+          cursor: pointer;
+
+        }
+      }
+    }
+  }
+
+  mat-sidenav {
+    border-right: 1px solid #5282f0;
+
+    .router-link-active {
+      color: black;
+    }
+
+
+    a {
+      font-weight: 30px;
+      color: #5282f0;
+
+      span {
+        margin-left: 10px;
+        font-size: 20px;
+      }
+    }
+
+    .profile {
+      color: #5282f0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      margin-left: 15px;
+
+      img {
+        height: 60px;
+        width: 60px;
+        padding: 10px;
+      }
+
+      h4 {
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .body {
+    margin-top: 6%;
+
+    @media only screen and (max-width: 1000px) {
+      margin-top: 16%;
+    }
+  }
+}

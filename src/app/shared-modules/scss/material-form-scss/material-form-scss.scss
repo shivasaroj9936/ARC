@@ -1,0 +1,23 @@
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $color;
+  }
+
+  .mat-form-field {
+    width: 90%;
+
+    .mat-hint,
+    input,
+    ::placeholder,
+    .mat-form-field-label {
+      color: $color;
+    }
+  }
+
+
+
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: white;
+  }
+}

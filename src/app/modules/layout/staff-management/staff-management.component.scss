@@ -1,0 +1,40 @@
+$color: #5282f0;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+
+section {
+  background-color: #ffff;
+  margin: auto 30px ;
+  color: $color;
+
+  .add-staff {
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: 1750px) {
+      margin-top: 10%;
+     }
+     @media only screen and (max-width: 1200px) {
+      margin-top: 15%;
+     }
+     @media only screen and (max-width: 537px) {
+      margin-top: 30%;
+     }
+
+    button {
+      border: none;
+      color: #ffff;
+      cursor: pointer;
+      background-color: $color;
+    }
+  }
+
+  app-filter {
+    .staff-management {
+      margin-top: -34px;
+
+      mat-form-field {
+        margin-top: -10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+$widthDropdown: 200px;
+$color: #5282f0;
+
+@mixin btnStyle {
+  width: 120px;
+  font-size: 16px;
+  font-size: 300;
+  padding: 5px;
+  cursor: pointer;
+}
+
+section {
+  .filterSection {
+    border: 3px solid $color;
+    margin: $padding auto;
+
+    ::ng-deep {
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: $color;
+      }
+    }
+
+    .filterSectionRow1 {
+      display: flex;
+      justify-content: space-between;
+      padding: $padding;
+
+      @media only screen and (max-width: 1040px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .field1 {
+        width: 400px;
+      }
+      @media only screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        .field1 {
+          width: 100%;
+        }
+      }
+    }
+
+    .filterSectionRow2 {
+      display: flex;
+      gap: 15px;
+      padding: $padding;
+      margin-top: -3%;
+
+      label {
+        color: $color;
+        font-weight: 500;
+      }
+
+      #added {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+        margin-top: -20px;
+      }
+
+      #status {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+        margin-top: -20px;
+      }
+    }
+
+    .fileIcon {
+      margin-left: 49%;
+
+      mat-icon {
+        padding: 10px;
+        background-color: #7198f3;
+        color: #ffff;
+        border-radius: 50%;
+        font-size: 25px;
+      }
+
+    }
+
+    .btnGroup {
+      display: flex;
+      gap: 30px;
+      padding: $padding;
+
+      #save {
+        background-color: $color;
+        color: #ffff;
+        @include btnStyle();
+        border: none;
+      }
+
+      #reset {
+        color: $color;
+        border: 1px solid $color;
+        @include btnStyle();
+      }
+    }
+  }
+
+
+}

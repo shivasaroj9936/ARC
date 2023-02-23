@@ -1,0 +1,56 @@
+<section>
+  <div class="question">
+    <div class="heading">
+      <label>Question</label>
+    </div>
+    <editor
+      [init]="{
+        height: 500,
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+          'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
+      }"
+    ></editor>
+  </div>
+  <div class="answer">
+    <div class="heading">
+      <label>Answer</label>
+    </div>
+    <editor
+      [init]="{
+        height: 500,
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+          'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
+      }"
+    ></editor>
+  </div>
+  <div class="buttons">
+      <div class="cancel-button">
+        <button type="submit" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Cancel</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+      <div class="add-button">
+        <button type="submit" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Add</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+    </div>
+</section>

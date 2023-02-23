@@ -1,0 +1,32 @@
+<section>
+  <div class="add-staff">
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      routerLink="add-staff"
+    >
+      <ng-container *ngIf="!spinner">Add New Staff Member</ng-container>
+      <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+    </button>
+  </div>
+
+  <app-filter  (titleChange)="filterData()"  (filterRest)="onReset()"  [filterForm]="filterForm">
+    <form [formGroup]="filterForm">
+    <div  class="staff-management">
+      <h3>Status</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="one">Specific User</mat-option>
+          <mat-option value="two">All User</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  </app-filter>
+  <div class="table">
+    <app-common-table [columns]="columns" [dataSource]="dataSource" [pageSize]="pageSize">
+    </app-common-table>
+  </div>
+</section>

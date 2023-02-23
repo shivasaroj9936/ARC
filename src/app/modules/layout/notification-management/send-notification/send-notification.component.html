@@ -1,0 +1,36 @@
+<section>
+  <div class="detail">
+    <h3 class="title">Details</h3>
+    <div class="userType">
+      <h1 class="rowHeading">User Type</h1>
+      <mat-radio-group [(ngModel)]="isVisible" >
+        <mat-radio-button [value]="1">All Users</mat-radio-button>
+        <mat-radio-button [value]="2" [checked]="isSelected">Specific Users</mat-radio-button>
+      </mat-radio-group>
+      <div class="inputField" *ngIf="isVisible==2">
+        <label>Search User</label>
+        <mat-form-field appearance="outline">
+          <input matInput required>
+          <mat-error>Please enter the required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+        <mat-form-field appearance="outline">
+          <input placeholder="*Title" matInput required>
+          <mat-error>Please enter the required</mat-error>
+
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+        <mat-form-field appearance="outline" >
+          <textarea placeholder="*Description" matInput rows="5" required></textarea>
+          <mat-error>Please enter the required</mat-error>
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="btn">
+      <button mat-raised-button id="sendBtn">Send</button>
+    </div>
+  </div>
+</section>

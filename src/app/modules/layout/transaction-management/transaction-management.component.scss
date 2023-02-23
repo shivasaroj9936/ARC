@@ -1,0 +1,95 @@
+$color: #7198f3;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+
+$widthDropdown: 200px;
+
+@mixin paymentStyle {
+  background-color: $color;
+  color: #ffff;
+  padding: $padding;
+
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
+@mixin btnStyle {
+  width: 180px;
+  font-size: 20px;
+  font-size: 400;
+  padding: 10px;
+}
+
+section {
+  margin: auto 30px;
+  background-color: #ffff;
+
+
+  .payment {
+    display: flex;
+    gap: 50px;
+    @media only screen and (max-width: 1800px) {
+      margin-top: 10%;
+    }
+    @media only screen and (max-width: 1224px) {
+      margin-top: 15%;
+    }
+    @media only screen and (max-width: 500px) {
+      margin-top: 30%;
+    }
+    @media only screen and (max-width: 1100px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .totalPayment {
+      display: flex;
+      gap: 150px;
+      @include paymentStyle();
+    }
+
+    .currentPayment {
+      display: flex;
+      gap: 150px;
+      @include paymentStyle();
+    }
+  }
+
+
+  app-filter {
+
+    .transaction-management {
+      color: $color;
+      display: flex;
+      gap: 15px;
+      padding: $padding;
+      margin: -3% auto;
+      @media only screen and (max-width: 1040px) {
+        display: flex;
+        flex-direction: column;
+        mat-form-field{
+          width: 200px;
+        }
+      }
+      label {
+        color: $color;
+        font-weight: 500;
+      }
+
+      #added {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+        margin-top: -20px;
+      }
+
+      #status {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+        margin-top: -20px;
+      }
+    }
+  }
+}

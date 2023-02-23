@@ -1,0 +1,48 @@
+<section>
+  <div class="payment">
+    <div class="totalPayment">
+      <h3>Total Payment</h3>
+      <h3>$120000</h3>
+    </div>
+    <div class="currentPayment">
+      <h3>Current Month Payment</h3>
+      <h3>$1200</h3>
+    </div>
+  </div>
+
+  <app-filter (titleChange)="filterData()"  (filterRest)="onReset()"  [filterForm]="filterForm" >
+    <div class="transaction-management">
+      <div id="added">
+        <label>Added On</label>
+        <mat-form-field class="example-full-width2" appearance="outline" required>
+          <mat-select placeholder="From" matInput>
+            <mat-option>None</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="example-full-width2" appearance="outline" required>
+        <mat-label>To</mat-label>
+        <mat-select placeholder="To" matInput>
+          <mat-option>None</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+
+      <div id="status">
+        <label>Status</label>
+        <mat-form-field class="example-full-width2" appearance="outline" required>
+          <mat-select placeholder="Select" matInput>
+            <mat-option>None</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </app-filter>
+  <div class="table">
+    <app-common-table [columns]="columns" [dataSource]="dataSource"   [pageSize]="pageSize">
+    </app-common-table>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+$primary: #5282f0;
+$backGroundColor: #c0d2fa;
+
+section {
+  table {
+    width: 100%;
+    border: 2px solid $primary;
+
+    th {
+      color: $primary;
+      background-color: #c0d2fa;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    tr {
+      text-align: center;
+    }
+
+    td {
+      color: $primary;
+      .action{
+        mat-icon{
+          cursor: pointer;
+        }
+      }
+    }
+
+    mat-icon {
+      color: $primary;
+      margin-right: 4px;
+    }
+  }
+}

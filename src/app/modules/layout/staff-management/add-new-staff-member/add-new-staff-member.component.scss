@@ -1,0 +1,92 @@
+$color: #5282f0;
+
+section {
+  margin: 30px;
+
+  @media only screen and (max-width:1700px) {
+    margin-top: 10%;
+
+  }
+
+  @media only screen and (max-width:1150px) {
+    margin-top: 15%;
+
+  }
+
+  @media only screen and (max-width:500px) {
+    margin-top: 20%;
+
+  }
+
+  @media only screen and (max-width:430px) {
+    margin-top: 25%;
+
+  }
+
+  form {
+    border: 1px solid #5282f0;
+    margin-top: 2%;
+
+    .form-sections {
+      padding: 2%;
+      display: grid;
+      grid-template-columns: auto auto;
+
+      @media only screen and (max-width: 700px) {
+        grid-template-columns: auto;
+      }
+
+
+      label {
+        color: $color;
+      }
+
+      ::ng-deep {
+
+        .mat-form-field {
+          width: 90%;
+        }
+
+        .mat-progress-spinner circle,
+        .mat-spinner circle {
+          stroke: white;
+        }
+      }
+
+      .right,
+      .left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left {
+        position: relative;
+      }
+
+      .left:after {
+        content: '';
+        position: absolute;
+        right:5%;
+        border-right: 1px solid #cfc7c0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+
+    .save-button {
+      text-align: center;
+      margin-bottom: 2%;
+
+      button {
+        border: none;
+        margin-right: 40px;
+        padding: 10px 40px;
+        font-size: 24px;
+        color: #ffff;
+        background-color: $color;
+        border: 1px solid #464bb4;
+        cursor: pointer;
+      }
+    }
+  }
+}

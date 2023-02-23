@@ -1,0 +1,160 @@
+<section>
+  <div class="profile-section">
+    <div class="profile-image">
+      <img src="../../../assets/user.png" />
+      <!-- <a type="button" mat-button (click)="fileInput1.click()">
+        Upload User Profile
+        <input #fileInput1 type="file" style="display: none" (change)="onFileChange($event)" />
+      </a> -->
+    </div>
+    <div class="profile-details">
+      <p><span>Name :</span> Robert</p>
+      <p *ngIf="toEdit"><span>Email ID :</span> robert@gmail.com</p>
+      <p *ngIf="!toEdit">
+        <span>Email ID : </span>
+        <mat-form-field appearance="outline" >
+          <input matInput placeholder="Email id..." required />
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" (click)="toEdit=!toEdit">
+          <ng-container *ngIf="!spinner">Save</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </p>
+      <p><span>Title :</span> Admin</p>
+    </div>
+    <div class="edit-button" *ngIf="toEdit">
+      <button type="submit" mat-raised-button color="primary" (click)="toEdit=!toEdit">
+        <ng-container *ngIf="!spinner">Edit Profile</ng-container>
+        <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+      </button>
+    </div>
+  </div>
+  <form action="" [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+    <div class="password">
+      <p>Change Password</p>
+      <div class="current-password">
+        <label>*Current Password</label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            formControlName="current_password"
+            placeholder="*******"
+            required
+          />
+          <mat-icon
+            matSuffix
+            (click)="showCurrentPassword = !showCurrentPassword"
+          >
+            {{
+              showCurrentPassword ? "visibility_off" : "visibility"
+            }}</mat-icon
+          >
+          <mat-error
+            *ngIf="
+              changePasswordForm?.controls?.current_password?.errors?.required
+            "
+            >*Current Password is required</mat-error
+          >
+          <!-- <mat-error *ngIf="changePasswordForm?.controls?.current_password?.errors?.required">*New Password is required</mat-error> -->
+          <mat-error
+            *ngIf="
+              changePasswordForm?.controls?.current_password?.errors?.pattern
+            "
+            >*Enter minimum five characters, at least one letter, one number and
+            one special character.
+          </mat-error>
+          <!-- <mat-error>*Enter correct email</mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="new-password">
+        <div class="left">
+          <label>*New Password</label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              formControlName="new_password"
+              placeholder="*New Password"
+              required
+            />
+            <mat-icon matSuffix (click)="showNewPassword = !showNewPassword">
+              {{ showNewPassword ? "visibility_off" : "visibility" }}</mat-icon
+            >
+            <mat-error
+              *ngIf="
+                changePasswordForm?.controls?.new_password?.errors?.required
+              "
+              >*New Password is required</mat-error
+            >
+            <mat-error
+              *ngIf="
+                changePasswordForm?.controls?.new_password?.errors?.pattern
+              "
+              >*Enter minimum five characters, at least one letter, one number
+              and one special character.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="right">
+          <label>*Confirm is Password</label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              formControlName="confirm_password"
+              placeholder="*Confirm Password"
+              required
+            />
+            <mat-icon
+              matSuffix
+              (click)="showConfirmPassword = !showConfirmPassword"
+            >
+              {{
+                showConfirmPassword ? "visibility_off" : "visibility"
+              }}</mat-icon
+            >
+            <mat-error
+              *ngIf="
+                changePasswordForm?.controls?.confirm_password?.errors?.required
+              "
+              >*Confirm Password is required</mat-error
+            >
+            <mat-error
+              *ngIf="
+                changePasswordForm?.controls?.confirm_password?.errors?.pattern
+              "
+              >*Enter minimum five characters, at least one letter, one number
+              and one special character.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                changePasswordForm?.controls?.confirm_password?.errors
+                  ?.confirmedValidator
+              "
+              >*Password and Confirm Password must be match.</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-buttons">
+      <div class="cancel-button">
+        <button type="reset" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Cancel</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+      <div class="save-button">
+        <button type="submit" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Save</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+      <div class="logout-button">
+        <button type="reset" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">logout</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+    </div>
+  </form>
+</section>

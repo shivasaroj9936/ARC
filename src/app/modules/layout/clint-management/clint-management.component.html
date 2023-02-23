@@ -1,0 +1,30 @@
+<section>
+  <div class="send-icon">
+    <div class="send" *ngIf="!sent">
+      <mat-icon (click)="toClintDetails()">forward</mat-icon>
+    </div>
+  </div>
+
+    <app-filter (titleChange)="filterData()"  (filterRest)="onReset()"  [filterForm]="filterForm" >
+      <div class="client-management">
+        <p >Client Type</p>
+        <form [formGroup]="filterForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Select</mat-label >
+          <mat-select formControlName="clientType">
+            <mat-option value="one">Active</mat-option>
+            <mat-option value="two">Blocked</mat-option>
+            <mat-option value="two">Archive</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </form>
+      </div>
+
+    </app-filter >
+
+
+  <div class="table">
+    <app-common-table [columns]="columns" [dataSource]="dataSource"   [pageSize]="pageSize">
+    </app-common-table>
+  </div>
+</section>

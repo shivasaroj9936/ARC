@@ -1,0 +1,45 @@
+$color: #7198f3;
+
+section {
+  margin: 30px;
+
+  .heading {
+    margin: 30px auto;
+
+    label {
+      color: $color;
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    margin-top: 30px;
+
+    button {
+      padding: 10px 40px;
+      font-size: 24px;
+      border: 1px solid $color;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .add-button {
+
+      button {
+        color: #ffff;
+        background-color: $color;
+
+      }
+
+    }
+
+    .cancel-button {
+      button {
+        color: $color;
+        background-color: #ffff;
+      }
+    }
+  }
+}

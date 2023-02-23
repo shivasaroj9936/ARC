@@ -1,0 +1,229 @@
+<body>
+  <section>
+    <div class="profile">
+      <img src="../../../assets/user.png" />
+      <a type="button" mat-button (click)="fileInput1.click()">
+        Upload User Profile
+        <input
+          #fileInput1
+          type="file"
+          style="display: none"
+          (change)="onFileChange($event)"
+        />
+      </a>
+    </div>
+    <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+      <div class="form-sections">
+        <div class="left">
+          <p>*Full Name</p>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="full_name" required />
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.full_name?.errors?.required"
+              >*Full name is required</mat-error
+            >
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.full_name?.errors?.minlength"
+              >*Minimum 3 character is required</mat-error
+            >
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.full_name?.errors?.pattern"
+              >*Please remove accessinve null character
+            </mat-error>
+          </mat-form-field>
+          <p>Email Address</p>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="email" required />
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.email?.errors?.required"
+              >*Email is required</mat-error
+            >
+            <!-- <mat-error *ngIf="userDetailsForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+            <mat-error *ngIf="userDetailsForm?.controls?.email?.errors?.pattern"
+              >*Enter valid email</mat-error
+            >
+          </mat-form-field>
+          <p>*Phone Number</p>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              formControlName="phone_number"
+              required
+              type="number"
+            />
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.phone_number?.errors?.required"
+              >*Phone number is required</mat-error
+            >
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.phone_number?.errors?.pattern"
+              >*Enter valid 10 digit phone number</mat-error
+            >
+          </mat-form-field>
+        </div>
+        <div class="right">
+          <p>*Postal Code</p>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="postalcode" required />
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.postalcode?.errors?.required"
+              >*Postal is required</mat-error
+            >
+          </mat-form-field>
+          <p>*Password</p>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              required
+            />
+            <mat-icon matSuffix (click)="showPassword = !showPassword">
+              {{ showPassword ? "visibility_off" : "visibility" }}</mat-icon
+            >
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.password?.errors?.required"
+              >*Password is required</mat-error
+            >
+            <mat-error
+              *ngIf="userDetailsForm?.controls?.password?.errors?.pattern"
+              >*Enter minimum five characters, at least one letter, one number
+              and one special character.
+            </mat-error>
+          </mat-form-field>
+          <p>*Confirm Password</p>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              formControlName="confirm_password"
+              required
+            />
+            <mat-icon
+              matSuffix
+              (click)="showConfirmPassword = !showConfirmPassword"
+            >
+              {{
+                showConfirmPassword ? "visibility_off" : "visibility"
+              }}</mat-icon
+            >
+            <mat-error
+              *ngIf="
+                userDetailsForm?.controls?.confirm_password?.errors?.required
+              "
+              >*Confirm Password is required</mat-error
+            >
+            <mat-error
+              *ngIf="
+                userDetailsForm?.controls?.confirm_password?.errors?.pattern
+              "
+              >*Enter minimum five characters, at least one letter, one number
+              and one special character.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                userDetailsForm?.controls?.confirm_password?.errors
+                  ?.confirmedValidator
+              "
+              >*Password and Confirm Password must be match.</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="save-button">
+        <button type="submit" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Save</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+    </form>
+
+    <div class="interview">
+      <div class="radio-button">
+        <label>Attend interview</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="ssn-number">
+        <label>SSN Number</label>
+        <div class="input-box">
+          <mat-form-field appearance="outline">
+            <input matInput required />
+            <!-- <mat-icon matSuffix (click)="togglePasswordVisibility()" > {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                <mat-error *ngIf="loginForm?.controls?.password?.errors?.required">*Password is required</mat-error> -->
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">
+            <ng-container *ngIf="!spinner">Save</ng-container>
+            <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="credit-counselling">
+      <div class="radio-button">
+        <label>Attend Credit Counselling Session</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="credit-file">
+      <div class="radio-button">
+        <label>Credit File Reviewed</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="credit-report">
+      <label>Credit Reports</label>
+      <app-file-upload [fileType]="{'fileType':'creditReport'}" (Uploaded)="getUploadedFiles($event)" > </app-file-upload>
+    </div>
+    <div class="payment">
+      <div class="radio-button">
+        <label>Payment Type</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Pre-Filling </mat-radio-button>
+          <mat-radio-button value="2">Post-Filling</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="payment-inputs">
+        <div class="paid-amount">
+          <label>Paid Amount</label>
+          <mat-form-field appearance="outline">
+            <input matInput required />
+            <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                  <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="pending-amount">
+          <label>Pending Amount</label>
+          <mat-form-field appearance="outline">
+            <input matInput required />
+            <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                  <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="interview-2">
+      <div class="radio-button">
+        <label>Attended Interview#2</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+        <label class="bci-file">BCI Files</label>
+        <app-file-upload> </app-file-upload>
+      </div>
+    </div>
+    <div class="download-resources">
+      <label>Download Resources </label>
+      <app-file-upload> </app-file-upload>
+    </div>
+  </section>
+</body>

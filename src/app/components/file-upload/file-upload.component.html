@@ -1,0 +1,29 @@
+<div class="doc-upload">
+  <div class="upload-icon" *ngIf="uploadedFiles.length==0">
+    <mat-icon >image</mat-icon>
+    <button type="button" mat-button (click)="fileInput1.click()" > Upload
+      <input    #fileInput1  type="file"  style="display: none"  (change)="onFileChange($event)" />
+    </button>
+  </div>
+  <div class="uploaded" *ngIf="uploadedFiles.length>0">
+      <ng-container *ngFor="let file of uploadedFiles;let i=index">
+          <div class="uploaded-document">
+            <mat-icon class="cancel-icon" (click)="deleteFile(i)">cancel</mat-icon>
+            <div class="doc">
+
+               <mat-icon>picture_as_pdf</mat-icon>
+               <p>report {{i+1|number}} .pdf</p>
+             </div>
+          </div>
+       </ng-container>
+      <div class="upload-button">
+        <button type="submit" mat-raised-button color="primary" (click)="fileInput1.click()" >
+            <input    #fileInput1  type="file"  style="display: none"  (change)="onFileChange($event)" />
+
+            <ng-container *ngIf="!spinner">Upload</ng-container>
+            <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+         </button>
+         <button (click)="onUpload()"> save</button>
+       </div>
+  </div>
+</div>

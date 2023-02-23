@@ -1,0 +1,196 @@
+$color: #5282f0;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+$backGroundColor: #eef3fe;
+$borderRadius: 15px;
+
+section {
+  background-color: #ffff;
+
+  label {
+    font-size: 25px;
+    font-weight: 400;
+    color: $color;
+    margin: 15px 0;
+  }
+
+  ::ng-deep {
+    mat-radio-group {
+      padding: 10px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      color: $color;
+
+    }
+  }
+
+  .send-icon {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+    h1 {
+      font-weight: 500;
+      color: $color;
+    }
+
+    mat-icon {
+      padding: 10px;
+      margin-left: 13px;
+      cursor: pointer;
+      background-color: #7198f3;
+      color: #ffff;
+      border-radius: 50%;
+      font-size: 25px;
+    }
+  }
+
+  .details-sections {
+    margin: 30px;
+
+    .box1 {
+      border-top-left-radius: $borderRadius;
+
+      @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .box2 {
+      border-top-right-radius: $borderRadius;
+    }
+
+    .box3 {
+      border-bottom-left-radius: $borderRadius;
+    }
+
+    .box4 {
+      border-bottom-right-radius: $borderRadius;
+    }
+
+    .box {
+      background: #eef2fe;
+
+      .title {
+        color: $color;
+      }
+
+      .titleData {
+        margin-top: -20px;
+      }
+
+      .icon {
+        display: flex;
+        background: #dde6fd;
+        border-radius: 50%;
+        border: 1px solid $color;
+        height: 150px;
+        width: 150px;
+        margin-top: 20px;
+
+        #personIcon {
+          font-size: 150px;
+          color: $color;
+        }
+      }
+
+      .clientData {
+        margin: 4% 15% 0% 0%; // margin: 30px 150px 0px 0px;
+      }
+
+      .name {
+        margin: 4% 15% 0% 0%;
+      }
+
+      .box3Heading {
+        color: $color;
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .spouseContact {
+        margin: 10% 20% 0% 0%;
+      }
+
+      .spouseDetail {
+        margin: 10% 30% 0% 0%;
+      }
+
+      ::ng-deep .mat-grid-tile-content {
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+    }
+
+  }
+
+  .form-section {
+    margin: 30px;
+    width: 80%;
+
+    button {
+      margin-left: 10px;
+      color: #ffff;
+      background-color: $color;
+      border: none;
+      cursor: pointer;
+    }
+
+    .interview {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px auto;
+
+      @media only screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .radio-button {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .credit-file {
+      display: grid;
+      grid-template-columns: 40% 40%;
+
+      @media only screen and (max-width: 1523px) {
+        display: grid;
+        grid-template-columns: auto;
+
+      }
+    }
+
+    .payment {
+      display: grid;
+      flex-direction: column;
+
+      .payment-inputs {
+        display: grid;
+        grid-template-columns: 30% 30%;
+        gap: 10px;
+
+        mat-form-field {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 1000px) {
+          display: grid;
+          grid-template-columns: auto;
+
+          width: 100%;
+
+          mat-form-field {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  }
+}

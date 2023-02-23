@@ -1,0 +1,141 @@
+@mixin borderBottom {
+  border-bottom: 1px solid #5282f0;
+}
+
+body {
+  h1 {
+    color: #5282f0;
+  }
+
+  section {
+    background-color: white;
+    @include borderBottom();
+    margin: 5px 30px;
+    padding: 34px 0px;
+    @media only screen and (max-width: 1500px) {
+      // grid-template-columns: 100%;
+      // gap: 10px;
+      margin-top: 10%;
+    }
+    .data {
+      display: grid;
+      grid-template-columns: 40% 40%;
+      justify-content: space-between;
+
+      @media only screen and (max-width: 900px) {
+        grid-template-columns: 100%;
+        gap: 10px;
+      }
+
+      .box {
+        border: 10px solid #a8c0f7;
+        @media only screen and (max-width: 900px) {
+         // grid-template-columns: auto;
+          width: 100%;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin: 2% 3%;
+          font-size: 18px;
+          padding: 1% 3%;
+        }
+
+        .head {
+          background-color: #5282f0;
+          color: white;
+        }
+
+        .case {
+          margin: 2%;
+          padding: 2%;
+          height: 75%;
+          background-color: #5282f0;
+          color: white;
+
+          .total {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid white;
+          }
+
+          h2 {
+            font-size: 45px;
+          }
+
+          mat-icon {
+            font-size: 60px;
+            margin-right: 6%;
+          }
+        }
+      }
+    }
+
+    mat-button-toggle-group {
+      padding: 5px 1%;
+      border: 1px solid #5282f0;
+
+      mat-button-toggle {
+        width: 170px;
+
+        p {
+          color: #5282f0;
+          display: flex;
+          align-items: center;
+          font-size: 17px;
+
+          .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: 0 10px;
+            background-color: #5282f0;
+            display: inline-block;
+          }
+        }
+      }
+
+      .mat-button-toggle-checked {
+        background-color: #5282f0;
+        color: white;
+
+        p {
+          color: white;
+
+          .dot {
+            background-color: white;
+          }
+        }
+      }
+    }
+
+    .filter {
+      display: grid;
+      grid-template-columns: 40% 30%;
+      justify-content: space-between;
+      margin-top: 8px;
+
+      mat-icon {
+        color: #5282f0;
+      }
+
+      ::ng-deep {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+          color: #759bf3;
+        }
+
+        mat-form-field {
+          margin-bottom: 15px;
+
+          .mat-hint,
+          input,
+          ::placeholder,
+          .mat-form-field-label {
+            color: #759bf3;
+            font-weight: 550;
+          }
+        }
+      }
+    }
+  }
+}

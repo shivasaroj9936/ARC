@@ -1,0 +1,39 @@
+<section>
+
+  <form [formGroup]="newStaffDetails" (ngSubmit)="onSubmit()">
+    <div class="form-sections">
+      <div class="left">
+        <label>*First Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="first_name"  required>
+          <mat-error *ngIf="newStaffDetails?.controls?.first_name?.errors?.required">*First name is required</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.first_name?.errors?.minlength">*Minimum 3 character is required</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.first_name?.errors?.pattern">*Please remove accessinve null character </mat-error>
+        </mat-form-field>
+
+        <label>*Last Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="last_name"  required>
+          <mat-error *ngIf="newStaffDetails?.controls?.last_name?.errors?.required">*Last name is required</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.last_name?.errors?.minlength">*Minimum 3 character is required</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.last_name?.errors?.pattern">*Please remove accessinve null character </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="right">
+        <label>Email Address</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="email"  required>
+          <mat-error *ngIf="newStaffDetails?.controls?.email?.errors?.required">*Email is required</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.email?.errors?.email">*Enter correct email</mat-error>
+          <mat-error *ngIf="newStaffDetails?.controls?.email?.errors?.pattern">*Enter valid email</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="save-button">
+      <button type="submit" mat-raised-button color="primary">
+        <ng-container *ngIf="!spinner">Save</ng-container>
+        <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+      </button>
+    </div>
+  </form>
+</section>

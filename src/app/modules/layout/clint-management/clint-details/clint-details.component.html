@@ -1,0 +1,169 @@
+<section>
+  <div class="send-icon">
+    <h1>Clint Details</h1>
+    <div class="delete-block-icon">
+      <mat-icon>delete</mat-icon>
+      <mat-icon>block</mat-icon>
+    </div>
+  </div>
+  <div class="details-sections">
+    <mat-grid-list [cols]="breakpoint" rowHeight="0.05:0.03" (window:resize)="onResize($event)" class="gridList">
+      <mat-grid-tile class="box box1">
+        <div class="icon">
+          <mat-icon id="personIcon">person</mat-icon>
+        </div>
+        <div class="clientData">
+          <h2 class="title">Client ID</h2>
+          <h1 class="title titleData">Client1234</h1>
+          <h2 class="title">Email</h2>
+          <h1 class="title titleData">Martinbrown@arc.com</h1>
+          <h2 class="title">Postal Code</h2>
+          <h1 class="title titleData">024242</h1>
+          <h2 class="title">Address</h2>
+          <h1 class="title titleData">120-B Block, New York</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="box box2">
+        <div class="name">
+          <h2 class="title">Full Name</h2>
+          <h1 class="title titleData">Martin Brown</h1>
+          <h2 class="title">Mobile Number</h2>
+          <h1 class="title titleData">+966-98765432</h1>
+          <h2 class="title">status</h2>
+          <h1 class="title titleData">Active</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="box box3">
+        <h3 class="box3Heading">Spouse Details</h3>
+        <div class="spouseContact">
+          <h2 class="title">Full Name</h2>
+          <h1 class="title titleData">Olivia Brown</h1>
+          <h2 class="title">Email </h2>
+          <h1 class="title titleData">oliviabrown@arc.com</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="box box4">
+        <div class="spouseDetail">
+          <h2 class="title">Mobile Number</h2>
+          <h1 class="title titleData">+966-98765432</h1>
+
+          <h2 class="title">Address</h2>
+          <h1 class="title titleData">120-B Block, New York</h1>
+
+          <h2 class="title">Postal Code</h2>
+          <h1 class="title titleData">024242</h1>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="form-section">
+    <div class="interview">
+      <div class="radio-button">
+        <label>Attend interview</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="ssn-number">
+        <label>SSN Number</label>
+        <div class="input-box">
+          <mat-form-field appearance="outline">
+            <input matInput required />
+            <!-- <mat-icon matSuffix (click)="togglePasswordVisibility()" > {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                <mat-error *ngIf="loginForm?.controls?.password?.errors?.required">*Password is required</mat-error> -->
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">
+            <ng-container *ngIf="!spinner">Save</ng-container>
+            <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="credit-counselling">
+      <div class="radio-button">
+        <label>Attend Credit Counselling Session</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="credit-file">
+      <div class="radio-button">
+        <label>Credit Report Reviewed with Client</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="radio-button">
+        <label>Case Status</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Not filed</mat-radio-button>
+          <mat-radio-button value="2">In-progress</mat-radio-button>
+          <mat-radio-button value="3">Case Closed</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="credit-report">
+      <div class="radio-button">
+        <label>Credit Report</label>
+        <app-file-upload> </app-file-upload>
+
+      </div>
+    </div>
+    <div class="payment">
+      <div class="radio-button">
+        <label>Payment Type</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Pre-Filling </mat-radio-button>
+          <mat-radio-button value="2">Post-Filling</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="payment-inputs">
+        <div class="paid-amount">
+          <label>Paid Amount</label>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="email" required />
+            <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                  <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="pending-amount">
+          <label>Pending Amount</label>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="email" required />
+            <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                  <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="interview-2">
+      <div class="radio-button">
+        <label>Attended Call#2?</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+        <label class="bci-file">BCI Files</label>
+        <app-file-upload> </app-file-upload>
+
+      </div>
+    </div>
+    <div class="download-resources">
+      <div class="doc-section">
+        <label>Upload Resources for the Client</label>
+        <app-file-upload> </app-file-upload>
+      </div>
+    </div>
+    <div class="user-transaction">
+      <label>User's Transactions</label>
+    </div>
+    <div class="table">
+      <app-common-table [columns]="columns" [dataSource]="dataSource" >
+      </app-common-table>
+    </div>
+  </div>
+</section>

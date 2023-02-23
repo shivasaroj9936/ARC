@@ -1,0 +1,46 @@
+<section>
+  <main>
+    <div class="information">
+      <div class="sign-in-to-admin">
+        <h1>Sign In to Admin Panel</h1>
+      </div>
+      <div class="enter-details">
+        <h3>Enter the details below</h3>
+      </div>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>Email</label>
+      <mat-form-field appearance="outline">
+          <input matInput formControlName="email" placeholder="Email Address" required>
+          <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+          <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error>
+      </mat-form-field>
+      <label>Password</label>
+      <mat-form-field appearance="outline">
+          <input matInput  [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="*Password"  required>
+          <mat-icon matSuffix (click)="togglePasswordVisibility()" > {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+          <mat-error *ngIf="loginForm?.controls?.password?.errors?.required">*Password is required</mat-error>
+      </mat-form-field>
+      <div class="forget-password">
+        <a  (click)="forgetPassword()">Forgot Password?</a>
+      </div>
+        <div class="check-box">
+          <mat-checkbox class="example-margin" >Remember me</mat-checkbox>
+        </div>
+        <div class="error-message" *ngIf="errorType">
+          <div class="icon">
+            <mat-icon>warning</mat-icon>
+        </div>
+        <div class="message">
+          <p *ngIf="errorType">Please enter the requierd field.</p>
+          <p *ngIf="errorType">could not find any account associated with the email address.</p>
+          <p *ngIf="errorType">Email address & password do not match.</p>
+        </div>
+        </div>
+        <div class="login">
+           <button type="submit" mat-raised-button color="primary"> <ng-container *ngIf="!spinner">Login</ng-container> <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner></button>
+       </div>
+    </form>
+
+  </main>
+</section>

@@ -1,0 +1,37 @@
+$color: #5282f0;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+
+section {
+  background-color: #ffff;
+  margin: 0 30px;
+
+  .send-notification {
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: 1750px) {
+      margin-top: 10%;
+     }
+     @media only screen and (max-width: 1200px) {
+      margin-top: 15%;
+     }
+     @media only screen and (max-width: 537px) {
+      margin-top: 30%;
+     }
+    button {
+      padding: 10px 40px;
+      font-size: 14px;
+      border: 1px solid #ffff;
+      color: #ffff;
+      cursor: pointer;
+      background-color: $color;
+    }
+  }
+
+  app-filter {
+    .notification-management {
+      padding-left: 30px;
+      color: $color;
+    }
+  }
+}

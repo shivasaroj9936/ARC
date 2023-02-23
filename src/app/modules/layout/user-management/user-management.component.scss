@@ -1,0 +1,168 @@
+$color: #5282f0;
+$backGroundColor: #eef3fe;
+
+@mixin borderBottom {
+  border-bottom: 1px solid #5282f0;
+}
+
+
+
+body {
+  margin: auto 30px;
+
+  section {
+    background-color: white;
+    @include borderBottom();
+
+    ::ng-deep {
+      mat-radio-group {
+        margin: 10px;
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        color: $color;
+
+      }
+    }
+
+    .profile {
+      display: flex;
+      text-align: center;
+
+      a {
+        margin-top: 4%;
+        color: #5282f0;
+        height: 20px;
+      }
+    }
+
+    form {
+      border: 1px solid #5282f0;
+      margin-top: 2%;
+
+      .form-sections {
+        padding: 2%;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        @media only screen and (max-width: 700px) {
+          grid-template-columns: auto;
+        }
+
+        p {
+          color: $color;
+          font-size: 15px;
+          margin: 0;
+
+        }
+
+        ::ng-deep {
+
+          .mat-form-field {
+            width: 90%;
+          }
+
+          .mat-progress-spinner circle,
+          .mat-spinner circle {
+            stroke: white;
+          }
+        }
+
+        .right,
+        .left {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .left {
+          position: relative;
+
+          input[type=number]::-webkit-inner-spin-button,
+          input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+          }
+        }
+
+        .left:after {
+          content: '';
+          position: absolute;
+          right: 5%;
+          border-right: 1px solid #cfc7c0;
+          top: 0;
+          bottom: 0;
+        }
+      }
+
+      .save-button {
+        text-align: center;
+        margin-bottom: 2%;
+        margin-right: 100px;
+
+        button {
+          padding: 10px 40px;
+          font-size: 24px;
+          color: #ffff;
+          background-color: $color;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    label {
+      font-size: 30px;
+      font-weight: 400;
+      color: $color;
+    }
+
+    button {
+      margin-left: 10px;
+      color: #ffff;
+      background-color: $color;
+      cursor: pointer;
+      border: none;
+    }
+
+
+    .interview {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px auto;
+
+      @media only screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .payment {
+      display: grid;
+      flex-direction: column;
+      margin: 20px 0px;
+
+      .payment-inputs {
+        display: grid;
+        grid-template-columns: 30% 30%;
+        gap: 10px;
+
+        mat-form-field {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 1000px) {
+          display: grid;
+          grid-template-columns: auto;
+
+          width: 100%;
+
+          mat-form-field {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

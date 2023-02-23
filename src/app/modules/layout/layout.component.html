@@ -1,0 +1,72 @@
+<section>
+  <div class="toggle">
+    <mat-toolbar class="mat-elevation-z8">
+      <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <div class="profile">
+          <img src="../../../assets/user.png" />
+          <h4 class="name">RocketARC</h4>
+        </div>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/dashboard">
+          <mat-icon>home</mat-icon>
+          <span>Dashboard</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/user-management">
+          <mat-icon>person</mat-icon>
+          <span>User Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/client-management">
+          <mat-icon>person</mat-icon>
+          <span>Client Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/transaction-management'">
+          <mat-icon>receipt_long</mat-icon>
+          <span>Transaction Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/earnging-management'">
+          <mat-icon>redo</mat-icon>
+          <span>Earning Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/notification-management'">
+          <mat-icon>notifications</mat-icon>
+          <span>Notification Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/content-management'">
+          <mat-icon>content_paste</mat-icon>
+          <span>Content Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/staff-management'">
+          <mat-icon>content_paste</mat-icon>
+          <span>Staff Management</span>
+        </a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="header">
+        <div class="heading">
+          <h1>{{_router.url | mainUrl | titlecase}}</h1>
+          <!-- <p>{{_router.url | subUrl|mainUrl | titlecase}}</p> -->
+        </div>
+
+        <div class="profileIcon">
+          <span class="material-icons">notifications</span>
+          <div class="user">
+            <span class="material-icons">account_circle</span>
+            <p id="name" (click)="toMyProfile()" >user</p>
+          </div>
+        </div>
+      </div>
+      <div style="height: 89.3vh;" class="body">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>
